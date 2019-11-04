@@ -1,5 +1,6 @@
 import 'package:example_flutter/app/pages/global_componets/bottomNavBar/bottomNavBar_widget.dart';
 import 'package:example_flutter/app/pages/global_componets/drawer/drawer_widget.dart';
+import 'package:example_flutter/app/share/share_variables.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +14,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    if (ModalRoute.of(context).isCurrent) {
+      ShareVariables.selectedIndex = 0;
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
